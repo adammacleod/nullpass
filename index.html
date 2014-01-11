@@ -79,7 +79,7 @@
     
     <script>
       function generatePassword(master, domain, length) {
-        var pass = length + master + domain;
+        var pass = length + master + domain.trim().toLowerCase();
         var shaObj = new jsSHA(pass, "TEXT");
         var hash = shaObj.getHash("SHA-512", "B64");
         return hash.substring(0,length);
@@ -121,6 +121,9 @@
 
           assert(generatePassword('adam','google.com',12) !== generatePassword('adam','yahoo.com',12), 'Generated passwords with equal masters are not equal');
           assert(generatePassword('adam','google.com',12) !== generatePassword('ben','google.com',12), 'Generated passwords with equal domains are not equal');
+
+          assert(generatePassword('adam','google.com',12) === generatePassword('adam','GoOgLE.cOm',12), 'Domains are case insensitive');
+          assert(generatePassword('adam','google.com',12) === generatePassword('adam',' \n google.com \t ',12), 'Domains strip whitespace');
 
           assert(generatePassword('adam','google.com',0) === '', 'length=0');
           assert(generatePassword('adam','google.com',1) === '3', 'length=1');
