@@ -28,7 +28,17 @@
     <div class="container">
       <div class="row">
         
-        <div class="col-xs-12 col-sm-8">
+        <div class="col-xs-12 col-sm-4 col-sm-push-8">
+          <h1>&#8709;Pass</h1>
+          <form role="form">
+            <input type="password" id="master"   class="form-control" placeholder="Master Password" required autofocus>
+            <input type="text"     id="domain"   class="form-control" placeholder="Domain" required>
+            <input type="number"   id="length"   class="form-control" value="12" required>
+            <input type="text"     id="password" class="form-control well well-sm" onclick="this.select();">
+          </form>  
+        </div><!-- /column -->
+
+        <div class="col-xs-12 col-sm-8 col-sm-pull-4">
           <div id="about">
             <h1>What is &#8709;Pass?</h1>
             <h2>Easy</h2>
@@ -58,16 +68,6 @@
             <h1>Contact</h1>
             <p>I'm Adam and you can visit me at <a href="http://adam.macleod.id.au/">adam.macleod.id.au</a>, <a href="https://github.com/adammacleod">GitHub</a> or fire off an <a href="mailto:adam@macleod.id.au">email</a>.</p>
           </div>
-        </div><!-- /column -->
-
-        <div class="col-xs-12 col-sm-4">
-          <h1>&#8709;Pass</h1>
-          <form role="form">
-            <input type="password" id="master"   class="form-control" placeholder="Master Password" required autofocus>
-            <input type="text"     id="domain"   class="form-control" placeholder="Domain" required>
-            <input type="number"   id="length"   class="form-control" value="12" required>
-            <input type="text"     id="password" class="form-control well well-sm" onclick="this.select();">
-          </form>  
         </div><!-- /column -->
 
       </div><!-- /row -->
